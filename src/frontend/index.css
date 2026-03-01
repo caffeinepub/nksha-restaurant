@@ -1,0 +1,289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fraunces (premium display serif — variable optical size) */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces-Italic-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Playfair Display (display serif fallback) */
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/assets/fonts/PlayfairDisplay-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Instrument Serif */
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/assets/fonts/InstrumentSerif-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* General Sans (body) */
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Nksha Palette — Deep Emerald & Gold */
+    /* background: very dark near-black green */
+    --background: 0.10 0.025 155;
+    /* foreground: warm cream */
+    --foreground: 0.96 0.015 85;
+
+    /* card: dark emerald surface */
+    --card: 0.13 0.030 155;
+    --card-foreground: 0.96 0.015 85;
+
+    --popover: 0.13 0.030 155;
+    --popover-foreground: 0.96 0.015 85;
+
+    /* primary: gold accent */
+    --primary: 0.72 0.130 85;
+    --primary-foreground: 0.10 0.025 155;
+
+    /* secondary: deep emerald */
+    --secondary: 0.22 0.060 155;
+    --secondary-foreground: 0.96 0.015 85;
+
+    /* muted: mid-dark emerald */
+    --muted: 0.18 0.040 155;
+    --muted-foreground: 0.65 0.025 85;
+
+    /* accent: gold */
+    --accent: 0.72 0.130 85;
+    --accent-foreground: 0.10 0.025 155;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.25 0.040 155;
+    --input: 0.20 0.040 155;
+    --ring: 0.72 0.130 85;
+
+    --chart-1: 0.72 0.130 85;
+    --chart-2: 0.30 0.080 155;
+    --chart-3: 0.50 0.060 155;
+    --chart-4: 0.85 0.090 85;
+    --chart-5: 0.55 0.100 155;
+
+    --sidebar: 0.13 0.030 155;
+    --sidebar-foreground: 0.96 0.015 85;
+    --sidebar-primary: 0.72 0.130 85;
+    --sidebar-primary-foreground: 0.10 0.025 155;
+    --sidebar-accent: 0.18 0.040 155;
+    --sidebar-accent-foreground: 0.96 0.015 85;
+    --sidebar-border: 0.25 0.040 155;
+    --sidebar-ring: 0.72 0.130 85;
+
+    /* Custom tokens */
+    --emerald-deep: 0.24 0.080 155;
+    --emerald-dark: 0.10 0.025 155;
+    --gold: 0.72 0.130 85;
+    --gold-light: 0.82 0.120 85;
+    --cream: 0.97 0.012 85;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "General Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Fraunces", "Playfair Display", "Instrument Serif", Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Fraunces", "Playfair Display", "Instrument Serif", Georgia, serif;
+  }
+
+  .font-body {
+    font-family: "General Sans", system-ui, sans-serif;
+  }
+
+  .text-gold {
+    color: oklch(var(--gold));
+  }
+
+  .text-cream {
+    color: oklch(var(--cream));
+  }
+
+  .bg-emerald-deep {
+    background-color: oklch(var(--emerald-deep));
+  }
+
+  .bg-emerald-dark {
+    background-color: oklch(var(--emerald-dark));
+  }
+
+  .border-gold {
+    border-color: oklch(var(--gold));
+  }
+
+  .bg-gold {
+    background-color: oklch(var(--gold));
+  }
+
+  .bg-gold-light {
+    background-color: oklch(var(--gold-light));
+  }
+
+  .bg-cream {
+    background-color: oklch(var(--cream));
+  }
+
+  /* Gold shimmer text — richer three-stop gradient */
+  .text-gradient-gold {
+    background: linear-gradient(
+      135deg,
+      oklch(0.65 0.130 85) 0%,
+      oklch(0.80 0.135 78) 35%,
+      oklch(0.92 0.105 72) 50%,
+      oklch(0.80 0.135 78) 65%,
+      oklch(0.65 0.130 85) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gold border glow — for premium cards/boxes */
+  .border-gold-glow {
+    border-color: oklch(0.72 0.130 85);
+    box-shadow: 0 0 0 1px oklch(0.72 0.130 85 / 0.15), 0 4px 32px oklch(0.72 0.130 85 / 0.10);
+  }
+
+  /* Gold price text — slightly brighter for legibility */
+  .text-gold-price {
+    color: oklch(0.80 0.130 82);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Display heading — optically tighter leading for large sizes */
+  .heading-display {
+    font-family: "Fraunces", "Playfair Display", Georgia, serif;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+  }
+
+  /* Section heading standard */
+  .heading-section {
+    font-family: "Fraunces", "Playfair Display", Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  /* Gold ornament separator */
+  .ornament-gold::before,
+  .ornament-gold::after {
+    content: "—";
+    color: oklch(0.72 0.130 85 / 0.5);
+    margin: 0 0.5em;
+    font-weight: 300;
+  }
+
+  /* Noise texture overlay */
+  .bg-noise {
+    position: relative;
+  }
+
+  .bg-noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Gold divider line — full-width fade */
+  .divider-gold {
+    width: 100%;
+    max-width: 320px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, oklch(0.72 0.130 85) 30%, oklch(0.85 0.115 80) 50%, oklch(0.72 0.130 85) 70%, transparent 100%);
+    margin: 0 auto;
+  }
+
+  /* Short centered gold rule for inline use */
+  .divider-gold-short {
+    width: 48px;
+    height: 2px;
+    background: oklch(0.72 0.130 85);
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  /* Masonry grid */
+  .masonry-grid {
+    columns: 2;
+    column-gap: 0.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .masonry-grid {
+      columns: 3;
+      column-gap: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .masonry-grid {
+      columns: 4;
+      column-gap: 1rem;
+    }
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 0.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .masonry-item {
+      margin-bottom: 1rem;
+    }
+  }
+}
