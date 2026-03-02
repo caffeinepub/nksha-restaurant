@@ -2,52 +2,39 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useState } from "react";
 
+import img1_2 from "/assets/uploads/unnamed-1--2.jpg";
+import img2_7 from "/assets/uploads/unnamed-2--7.jpg";
+import img3_3 from "/assets/uploads/unnamed-3--3.jpg";
+import img4_6 from "/assets/uploads/unnamed-4--6.jpg";
+import img4 from "/assets/uploads/unnamed-4.jpg";
+import img5_9 from "/assets/uploads/unnamed-5--9.jpg";
+// Import all images as ES modules so Vite bundles them correctly
+import img6_1 from "/assets/uploads/unnamed-6--1.jpg";
+import img7_11 from "/assets/uploads/unnamed-7--11.jpg";
+import img8_12 from "/assets/uploads/unnamed-8--12.jpg";
+import img9_13 from "/assets/uploads/unnamed-9--13.jpg";
+import img10_15 from "/assets/uploads/unnamed-10--15.jpg";
+import img11_8 from "/assets/uploads/unnamed-11--8.jpg";
+import img12_14 from "/assets/uploads/unnamed-12--14.jpg";
+import img13_10 from "/assets/uploads/unnamed-13--10.jpg";
+import img14_5 from "/assets/uploads/unnamed-14--5.jpg";
+
 const galleryImages = [
-  { src: "/assets/uploads/unnamed-6--1.jpg", alt: "Tableware and chutneys" },
-  {
-    src: "/assets/uploads/unnamed-1--2.jpg",
-    alt: "Nksha Restaurant exterior at night",
-  },
-  {
-    src: "/assets/uploads/unnamed-3--3.jpg",
-    alt: "Elegant interior dining room",
-  },
-  { src: "/assets/uploads/unnamed-4.jpg", alt: "Restaurant exterior night" },
-  {
-    src: "/assets/uploads/unnamed-14--5.jpg",
-    alt: "Soup plating with gold cutlery",
-  },
-  {
-    src: "/assets/uploads/unnamed-4--6.jpg",
-    alt: "Bar with arched bottle displays",
-  },
-  {
-    src: "/assets/uploads/unnamed-2--7.jpg",
-    alt: "Table chutneys and kebab setup",
-  },
-  {
-    src: "/assets/uploads/unnamed-11--8.jpg",
-    alt: "Exterior daytime pink facade",
-  },
-  { src: "/assets/uploads/unnamed-5--9.jpg", alt: "Exterior night with staff" },
-  {
-    src: "/assets/uploads/unnamed-13--10.jpg",
-    alt: "Seekh kebab on copper tray with cocktails",
-  },
-  {
-    src: "/assets/uploads/unnamed-7--11.jpg",
-    alt: "Dahi bhalla chaat on thali",
-  },
-  {
-    src: "/assets/uploads/unnamed-8--12.jpg",
-    alt: "Nksha menu book with poori",
-  },
-  { src: "/assets/uploads/unnamed-9--13.jpg", alt: "Biryani thali closeup" },
-  { src: "/assets/uploads/unnamed-12--14.jpg", alt: "Garlic naan in basket" },
-  {
-    src: "/assets/uploads/unnamed-10--15.jpg",
-    alt: "Biryani with samosa plating",
-  },
+  { src: img6_1, alt: "Tableware and chutneys" },
+  { src: img1_2, alt: "Nksha Restaurant exterior at night" },
+  { src: img3_3, alt: "Elegant interior dining room" },
+  { src: img4, alt: "Restaurant exterior night" },
+  { src: img14_5, alt: "Soup plating with gold cutlery" },
+  { src: img4_6, alt: "Bar with arched bottle displays" },
+  { src: img2_7, alt: "Table chutneys and kebab setup" },
+  { src: img11_8, alt: "Exterior daytime pink facade" },
+  { src: img5_9, alt: "Exterior night with staff" },
+  { src: img13_10, alt: "Seekh kebab on copper tray with cocktails" },
+  { src: img7_11, alt: "Dahi bhalla chaat on thali" },
+  { src: img8_12, alt: "Nksha menu book with poori" },
+  { src: img9_13, alt: "Biryani thali closeup" },
+  { src: img12_14, alt: "Garlic naan in basket" },
+  { src: img10_15, alt: "Biryani with samosa plating" },
 ];
 
 export default function GalleryPage() {
@@ -90,7 +77,7 @@ export default function GalleryPage() {
       <section className="relative h-[50vh] min-h-[360px] flex items-center justify-center overflow-hidden bg-[oklch(0.09_0.025_155)]">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{ backgroundImage: "url(/assets/uploads/unnamed-13--10.jpg)" }}
+          style={{ backgroundImage: `url(${img13_10})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.07_0.020_155/0.70)] to-[oklch(0.09_0.025_155)]" />
         <div className="relative z-10 text-center px-4">

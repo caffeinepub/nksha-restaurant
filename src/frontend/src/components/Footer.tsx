@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Clock, MapPin, Phone } from "lucide-react";
 import { SiInstagram, SiWhatsapp } from "react-icons/si";
+import logoImg from "/assets/generated/nksha-logo-transparent.dim_400x400.png";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -19,7 +20,7 @@ export default function Footer() {
           <div className="lg:col-span-1 space-y-5">
             <div className="flex items-center gap-3">
               <img
-                src="/assets/generated/nksha-logo-transparent.dim_400x400.png"
+                src={logoImg}
                 alt="Nksha Restaurant"
                 className="h-10 w-auto object-contain"
               />

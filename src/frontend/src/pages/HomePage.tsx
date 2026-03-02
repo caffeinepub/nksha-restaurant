@@ -5,21 +5,30 @@ import { useEffect, useRef } from "react";
 import { SiInstagram } from "react-icons/si";
 import WhatsAppBookingForm from "../components/WhatsAppBookingForm";
 
+// Import images as ES modules so Vite bundles them correctly
+import heroImage from "/assets/generated/hero-banner.dim_1600x900.jpg";
+import barPhoto from "/assets/uploads/unnamed-4--6.jpg";
+import chutneyPhoto from "/assets/uploads/unnamed-6--1.jpg";
+import dahiBhalla from "/assets/uploads/unnamed-7--11.jpg";
+import dumBiryani from "/assets/uploads/unnamed-9--13.jpg";
+import seekhKebab from "/assets/uploads/unnamed-13--10.jpg";
+import soupPhoto from "/assets/uploads/unnamed-14--5.jpg";
+
 const signatureDishes = [
   {
-    image: "/assets/uploads/unnamed-13--10.jpg",
+    image: seekhKebab,
     name: "Seekh Kebab",
     tagline: "Skewered perfection, slow smoked over coals",
     label: "Signature",
   },
   {
-    image: "/assets/uploads/unnamed-9--13.jpg",
+    image: dumBiryani,
     name: "Dum Biryani",
     tagline: "Basmati rice dum-sealed with royal spices",
     label: "Chef's Choice",
   },
   {
-    image: "/assets/uploads/unnamed-7--11.jpg",
+    image: dahiBhalla,
     name: "Dahi Bhalla Chaat",
     tagline: "Chandni Chowk-inspired, elevated for Nksha",
     label: "Crowd Favourite",
@@ -44,11 +53,7 @@ const features = [
   },
 ];
 
-const instagramPhotos = [
-  "/assets/uploads/unnamed-4--6.jpg",
-  "/assets/uploads/unnamed-14--5.jpg",
-  "/assets/uploads/unnamed-6--1.jpg",
-];
+const instagramPhotos = [barPhoto, soupPhoto, chutneyPhoto];
 
 export default function HomePage() {
   const bookingRef = useRef<HTMLElement>(null);
@@ -65,10 +70,7 @@ export default function HomePage() {
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              "url(/assets/generated/hero-banner.dim_1600x900.jpg)",
-          }}
+          style={{ backgroundImage: `url(${heroImage})` }}
         />
         {/* Multi-layer dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.06_0.020_155/0.75)] via-[oklch(0.07_0.020_155/0.60)] to-[oklch(0.07_0.020_155/0.85)]" />

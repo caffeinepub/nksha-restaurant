@@ -2,6 +2,7 @@ import { Link, useRouter } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
+import logoImg from "/assets/generated/nksha-logo-transparent.dim_400x400.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -56,7 +57,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 flex-shrink-0">
             <img
-              src="/assets/generated/nksha-logo-transparent.dim_400x400.png"
+              src={logoImg}
               alt="Nksha Restaurant"
               className="h-9 sm:h-11 w-auto object-contain"
             />
